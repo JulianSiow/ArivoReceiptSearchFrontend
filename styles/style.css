@@ -1,0 +1,24 @@
+.form-container {
+    padding: 5% 15% 0%;
+}
+
+.payment-container {
+    padding: 5% 15% 0%;
+}
+
+.receipt {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.err {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: red;
+    background-color: orange;
+    border: 1px solid red;
+    padding: 1em;
+    border-radius: .5rem; 
+}
