@@ -5,8 +5,16 @@ $('form').on('submit', (e) => {
     const date = $('#date').val();
     const cardNum = $('#cardNum').val();
 
+    const queriedDay = new Date(date);
+    const day = new Date(queriedDay).getTime()/1000;
+    const followingDay = new Date(queriedDay.getTime() + 86400000)/1000;
+    
+
+    console.log(queriedDay/1000);
+    console.log(followingDay)
+
     $.ajax({
-        url: `http://localhost:3000/api/v1/payments/${plateNum}/${date}/${cardNum}`,
+        url: `http://localhost:3000/api/v1/payments/${plateNum}/${day}/${followingDay}/${cardNum}`,
         type: 'GET',
         success: (res) => {
             if (res.data.length < 1) {
@@ -19,3 +27,10 @@ $('form').on('submit', (e) => {
         }
     });
 })
+
+const dbDate = new Date(1531839805135.056).setHours(0,0,0,0);
+
+// const dbTimestamp = dbDate.getTime();
+
+console.log('db date: ' + dbDate);
+// console.log('db timestamp: ' + dbTimestamp);
