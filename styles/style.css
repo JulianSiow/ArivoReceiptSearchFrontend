@@ -4,12 +4,14 @@
 
 .payment-container {
     padding: 5% 15% 0%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.receipt {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
+.payment-data {
+    display: flex;
+    flex-direction: column;
+
 }
 
 .err {
