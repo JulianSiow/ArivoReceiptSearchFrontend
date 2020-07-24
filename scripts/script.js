@@ -1,3 +1,5 @@
+const APIUrl = "http://localhost:3000";
+
 $('form').on('submit', (e) => {
     e.preventDefault();
 
@@ -14,7 +16,7 @@ $('form').on('submit', (e) => {
     const followingDay = new Date(queriedDay.getTime() + 86400000)/1000;
 
     $.ajax({
-        url: `http://localhost:3000/api/v1/payments/${plateNum}/${day}/${followingDay}/${cardNum}`,
+        url: `${APIUrl}/api/v1/payments/${plateNum}/${day}/${followingDay}/${cardNum}`,
         type: 'GET',
         success: (res) => {
             $('.payment-data').empty();
